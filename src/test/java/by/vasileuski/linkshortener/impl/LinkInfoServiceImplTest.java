@@ -1,7 +1,7 @@
 package by.vasileuski.linkshortener.impl;
 
 import by.vasileuski.linkshortener.modules.link.config.LinkProperties;
-import by.vasileuski.linkshortener.modules.link.dto.request.CreateLinkInfoRequestDto;
+import by.vasileuski.linkshortener.modules.link.dto.request.CreateLinkInfoRequest;
 import by.vasileuski.linkshortener.modules.link.service.impl.LinkInfoServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,7 +25,7 @@ class LinkInfoServiceImplTest {
 
     @Test
     void getShortLink() {
-        final var createLinkInfoRequestDto = new CreateLinkInfoRequestDto(
+        final var createLinkInfoRequestDto = new CreateLinkInfoRequest(
                 "https://random.com/KJLGHDFjS123NBFJKHgs",
                 LocalDateTime.now(),
                 "Ссылка",

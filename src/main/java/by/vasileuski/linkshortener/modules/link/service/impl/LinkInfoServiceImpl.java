@@ -1,7 +1,7 @@
 package by.vasileuski.linkshortener.modules.link.service.impl;
 
 import by.vasileuski.linkshortener.modules.link.config.LinkProperties;
-import by.vasileuski.linkshortener.modules.link.dto.request.CreateLinkInfoRequestDto;
+import by.vasileuski.linkshortener.modules.link.dto.request.CreateLinkInfoRequest;
 import by.vasileuski.linkshortener.modules.link.service.LinkInfoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,15 +15,15 @@ import static org.apache.commons.lang3.RandomStringUtils.secureStrong;
 @RequiredArgsConstructor
 public class LinkInfoServiceImpl implements LinkInfoService {
 
-    private static final Map<String, CreateLinkInfoRequestDto> linkInfoMap = new HashMap<>();
+    private static final Map<String, CreateLinkInfoRequest> linkInfoMap = new HashMap<>();
 
     private final LinkProperties linkProperties;
 
     @Override
-    public String getShortLink(final CreateLinkInfoRequestDto createLinkInfoRequestDto) {
+    public String getShortLink(final CreateLinkInfoRequest createLinkInfoRequest) {
         final var shortLink = secureStrong().nextAlphanumeric(linkProperties.getLength());
 
-        linkInfoMap.put(shortLink, createLinkInfoRequestDto);
+        linkInfoMap.put(shortLink, createLinkInfoRequest);
 
         return shortLink;
     }
