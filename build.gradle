@@ -15,6 +15,9 @@ java {
 repositories {
     mavenLocal()
     mavenCentral()
+    maven {
+        url = uri('https://raw.githubusercontent.com/OneeeTwooo/logging-starter/master/maven-repo')
+    }
 }
 
 dependencies {
@@ -22,6 +25,9 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     implementation 'org.apache.commons:commons-lang3:3.17.0'
+
+    implementation 'by.vasileuski:logging-starter-maven:1.0-SNAPSHOT'
+    implementation 'by.vasileuski:logging-starter:1.1-SNAPSHOT'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'

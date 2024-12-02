@@ -52,7 +52,10 @@ public class LinkInfoServiceImpl implements LinkInfoService {
 
     @Override
     public List<LinkInfoResponse> findByFilter() {
-        return linkInfoRepository.findAll().stream().map(this::mapEntityToResponse).toList();
+        return linkInfoRepository.findAll()
+                .stream()
+                .map(this::mapEntityToResponse)
+                .toList();
     }
 
     private LinkInfoResponse mapEntityToResponse(final LinkInfo linkInfo) {
